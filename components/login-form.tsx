@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useLoginHandler } from "@/hook/useLoginHandler"
+import Image from "next/image"
 
 export function LoginForm({
   className,
@@ -25,11 +26,25 @@ export function LoginForm({
   }
 
   return (
+
     <div className={cn("flex flex-col gap-6 rounded ", className)} {...props}>
-      <Card className={cn("relative mt-24 space-y-8 rounde bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14",
-         className)} 
-         {...props}>
+      <Image
+        src="https://rb.gy/p2hphi"
+        layout="fill"
+        className="-z-10 !hidden opacity-60 sm:!inline"
+        objectFit="cover"
+        alt="Background"
+      />
+
+      <div className={cn("text-3xl text-red-600 font-bold absolute object-contain left-4 top-4 cursor-pointer md:left-10 md:top-6")}
+        {...props}>
+        Madflix
+      </div>
+      <Card className={cn("relative mt-24 space-y-8 rounde bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14",
+        className)}
+        {...props}>
         <CardHeader>
+          <h1 className="text-4xl font-semibold">Sign In</h1>
         </CardHeader>
         <CardContent>
           <form onSubmit={onSubmit}>
