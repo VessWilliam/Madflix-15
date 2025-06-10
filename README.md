@@ -1,5 +1,9 @@
-## Getting Started
+## Next-js 15 With Netflix Clone but Madflix 🧸
 
-First, run the development server:
+# 💡Notes
+    using
+     -nextjs 15
+     -tailwind css
+     -zutand https://zustand-demo.pmnd.rs/
 
 
