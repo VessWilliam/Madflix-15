@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { useLoginHandler } from "@/hook/useLoginHandler"
+import { useSignupHandler } from "@/hook/useSignupHandler"
 import Image from "next/image"
 
 export function LoginForm({
@@ -19,6 +20,7 @@ export function LoginForm({
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { handleLogin, error } = useLoginHandler()
+  const { handleSignup } = useSignupHandler()
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -29,7 +31,7 @@ export function LoginForm({
 
     <div className={cn("flex flex-col gap-6 rounded ", className)} {...props}>
       <Image
-        src="https://rb.gy/p2hphi"
+        src="/landing.jpg"
         layout="fill"
         className="-z-10 !hidden opacity-60 sm:!inline"
         objectFit="cover"
@@ -82,10 +84,14 @@ export function LoginForm({
               </div>
             </div>
             <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
-                Sign up
-              </a>
+              <>
+                Already have an account?{" "}
+                <button type="button"
+                  onClick={() => handleSignup(email, password)}
+                  className="underline  underline-offset-4">
+                  register
+                </button>
+              </>
             </div>
           </form>
         </CardContent>

@@ -5,7 +5,7 @@ export interface AuthState {
   isLoading: boolean;
   error: string | null;
   signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<boolean>;
   logout: () => Promise<void>;
   checkAuth: () => void;
 }
