@@ -9,8 +9,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
-import { useLoginHandler } from "@/hook/useLoginHandler"
-import { useSignupHandler } from "@/hook/useSignupHandler"
+import { useLoginHandler } from "@/lib/hook/useLoginHandler"
+import { useSignupHandler } from "@/lib/hook/useSignupHandler"
 import Image from "next/image"
 
 export function LoginForm({
@@ -31,7 +31,7 @@ export function LoginForm({
 
     <div className={cn("flex flex-col gap-6 rounded ", className)} {...props}>
       <Image
-        src="/landing.jpg"
+        src="/landing_bg.jpg"
         layout="fill"
         className="-z-10 !hidden opacity-60 sm:!inline"
         objectFit="cover"
@@ -42,7 +42,7 @@ export function LoginForm({
         {...props}>
         Madflix
       </div>
-      <Card className={cn("relative mt-24 space-y-8 rounde bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14",
+      <Card className={cn("relative border-red-800 mt-24 space-y-8 rounde bg-black/85 py-10 px-6 md:mt-0 md:max-w-md md:px-14",
         className)}
         {...props}>
         <CardHeader>
