@@ -1,5 +1,4 @@
 import { FaTimes } from 'react-icons/fa';
-
 import { useRecoilState } from 'recoil';
 import { modalState, movieState } from '@/lib/atoms/modalAtom';
 import { useState, useEffect } from 'react';
