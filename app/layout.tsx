@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { AuthInit } from '@/components/Auth/AuthInit';
-
+import { ReactNode } from 'react';
+import RecoilProvider from "@/app/provider/RecoilProvider"; // adjust path as needed
 
 export const metadata: Metadata = {
   title: 'MadFlix',
@@ -11,13 +11,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" className="dark">
       <body>
-        <AuthInit/>
-        {children}
+        <RecoilProvider>{children}</RecoilProvider>
       </body>
     </html>
   );

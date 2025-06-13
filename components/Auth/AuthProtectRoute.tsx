@@ -7,13 +7,14 @@ import React, { useEffect } from 'react'
 export const AuthProtectRoute = ({ children }: { children: React.ReactNode }) => {
     const user = useAuthStore((state) => state.user);
     const router = useRouter();
-    useEffect(() => {
+   
+  useEffect(() => {
+    if (!user) {
+      router.replace('/');
+    }
+  }, [user, router]);
 
-        if (user === null) {
-            router.replace('/login');
-        }
-    }, [user, router]);
-    return <>{
-        user ? children : null
-    }</>
+  if (!user) return null;
+
+  return <>{children}</>;
 }

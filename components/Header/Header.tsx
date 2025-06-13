@@ -1,6 +1,5 @@
 'use client';
 
-import { BiBell } from 'react-icons/bi';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -25,14 +24,13 @@ function Header() {
         }`}
     >
       <div className="flex justify-between items-center px-6 py-4 md:px-10">
-    
+
         <div className="text-2xl md:text-3xl font-bold text-red-600 cursor-pointer">
           Madflix
         </div>
 
 
         <div className="flex items-center space-x-6 text-white">
-          <BiBell className="h-9 w-9" />
           <Link href="/account">
             <Image
               onClick={logout}

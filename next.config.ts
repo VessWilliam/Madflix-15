@@ -5,8 +5,17 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: {
-    domains: ['your-image-domain.com'],
+   images: {
+    remotePatterns:[
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+        pathname: '/t/p/**',
+      },
+    ]
   },
+  experimental: {
+  }
 };
+
 export default nextConfig;

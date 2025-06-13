@@ -1,3 +1,5 @@
+'use client'
+
 import { useAuthStore } from "@/lib/stores/authStore";
 import { useRouter } from "next/navigation";
 
